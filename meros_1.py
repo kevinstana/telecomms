@@ -14,7 +14,7 @@ def Q3(x):
 def QiE(Q, Qi):
     return np.abs(Qi - Q) / np.abs(Q)
 
-def plot_q(fig_counter, x, Q, Qi, errors_i, label1, label2, Qi_color):
+def plot_q(fig_counter, x, Q, Qi, errors_i, legend_Q, legend_Qi, Qi_color):
     custom_lines = [plt.Line2D([0], [0], color="blue"),
                     plt.Line2D([0], [0], color=Qi_color, linestyle=('--')),
                     plt.Line2D([0], [0], color='white')]
@@ -23,10 +23,11 @@ def plot_q(fig_counter, x, Q, Qi, errors_i, label1, label2, Qi_color):
     plt.semilogy(x, Qi, '--', color = Qi_color)
     plt.xlabel('x')
     plt.ylabel('Q(x)')
-    plt.legend(custom_lines, [label1, label2, 'εi = ' + errors_i])
-    # plt.show()
+    plt.legend(custom_lines, [legend_Q, legend_Qi, 'εi = ' + errors_i])
+    plt.ylim([1e-14, 1])
+    plt.show()
 
-x = np.linspace(2, 7, 100000)
+x = np.linspace(2, 7, 1000)
 
 Q = cl.Qfunction(x)
 

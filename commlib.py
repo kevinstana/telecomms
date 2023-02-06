@@ -157,14 +157,14 @@ class signal:
         for key in DEFAULT_PLOT_SETTINGS:
             setattr( self, key, DEFAULT_PLOT_SETTINGS[key] )
         
-    def plot(self, close_all = False, figure_no = None, what = 'time'):
+    def plot(self, close_all = False, figure_no = None, what = 'time', pam_title = None):
         
         if what == 'time':
            plot_signal(self.t, self.samples, plot_type = self.plot_type, 
                        close_all = close_all, xlabel = self.xlabelt, 
                        ylabel = self.ylabelt, figure_no = figure_no,
                        xlim = self.xlimt, ylim = self.ylimt, 
-                       show_grid = self.show_gridt, title = self.titlet)
+                       show_grid = self.show_gridt, title = pam_title)
         
         elif what == 'spec':
            plot_signal(self.f, self.spec, plot_type = self.plot_type, 
