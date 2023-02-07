@@ -25,7 +25,6 @@ def plot_q(fig_counter, x, Q, Qi, errors_i, legend_Q, legend_Qi, Qi_color):
     plt.ylabel('Q(x)')
     plt.legend(custom_lines, [legend_Q, legend_Qi, 'εi = ' + errors_i])
     plt.ylim([1e-14, 1])
-    plt.show()
 
 x = np.linspace(2, 7, 1000)
 
@@ -49,7 +48,7 @@ plot_q(1, x, Q, Q1, errors1, 'Q(x)', 'Q1(x)', 'purple')
 plot_q(2, x, Q, Q2, errors2, 'Q(x)', 'Q2(x)', 'green')
 plot_q(3, x, Q, Q3, errors3, 'Q(x)', 'Q3(x)', 'orange')
 
-
+plt.show()
 
 
 

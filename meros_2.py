@@ -65,7 +65,7 @@ for M in [2, 4, 8, 16]:
     
     create_pam(bits, M)
 
-
+plt.show()
 
 
 
